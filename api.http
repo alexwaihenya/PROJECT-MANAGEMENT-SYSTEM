@@ -1,0 +1,11 @@
+
+POST http://localhost:5000/projects/createproject
+Content-Type: application/json
+
+{
+    
+    "projectName":"design uiiiii",
+    "projectDescription":"design ui",
+    "projectTimeLine":"01/08/2022"
+    
+}
