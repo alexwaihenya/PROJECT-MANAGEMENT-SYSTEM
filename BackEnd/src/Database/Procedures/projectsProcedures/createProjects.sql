@@ -1,19 +1,22 @@
-CREATE PROCEDURE createProjects(
-@projectId INT,
-@projectName VARCHAR(200),
-@projectDescription VARCHAR(200),
-@projectTimeLine VARCHAR(200)
-)
-AS
+
+CREATE PROCEDURE createProject(
+    @project_name VARCHAR(200),
+    @project_desc VARCHAR(200),
+	@project_timeline VARCHAR(200)
+    )AS
+
 BEGIN
-	--IF EXISTS (SELECT * FROM dbo.Projects 
-
-
-INSERT INTO Projects(projectId,projectName,projectDescription,projectTimeLine)
-VALUES(
-@projectId,
-@projectName,
-@projectDescription,
-@projectTimeLine
-)
+    INSERT INTO Projects(
+        project_name,
+        project_desc,
+		project_timeline
+    )
+    VALUES(
+        @project_name,
+        @project_desc,
+		@project_timeline
+    );
 END;
+
+EXECUTE createProject "Advanced React", "Understand React Class Components","03/08/2022";
+SELECT * FROM Projects;

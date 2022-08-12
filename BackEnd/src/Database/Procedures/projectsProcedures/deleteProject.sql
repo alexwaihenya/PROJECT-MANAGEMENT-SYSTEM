@@ -1,6 +1,13 @@
-CREATE PROCEDURE deleteProjects(@projectId INT)
+ CREATE PROCEDURE assignProject(
+    @id INT,
+    @user_id INT
+) 
+
 AS
-BEGIN
-SELECT * FROM ProjectManagement 
-WHERE projectId = @projectId
-END
+
+BEGIN 
+    UPDATE Projects SET user_id = @user_id
+    WHERE id = @id
+
+END;
+
