@@ -2,7 +2,7 @@
 import mssql, { RequestError } from "mssql";
 import { sqlConfig } from "../Config/Config";
 import { Response } from "express";
-import { userLogin, userSchema } from "../Helpers/userValidator";
+import { registerSchema, userLoginSchema } from "../Helpers/userValidator";
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import { Request } from "express";
@@ -23,16 +23,12 @@ export const register = async(req:userCustom,res:Response)=>{
        
 
         const{ username,email, password}=req.body;
-        const {error,value} = userSchema.validate(req.body)
-        if(error instanceof RequestError){
-            console.log(error);
-            
-            
-            return res.json({
-                error:error.details[0].message
-            })
-        }
+        const {error,value} = registerSchema.validate(req.body)
         const hashedPassword = await bcrypt.hash(password,10)
+        if(error){
+            return res.json({error:error.details[0].message})
+        }
+        
         const pool = await mssql.connect(sqlConfig)
         if(pool.connected){
             console.log("connected");
@@ -69,7 +65,7 @@ export const login = async(req:userCustom,res:Response)=>{
         const {email,password}= req.body;
 
      
-        const{error,value}=userLogin.validate(req.body)
+        const{error,value}=userLoginSchema.validate(req.body)
         if(error){
             return res.json({error:error.details[0].message})
         }
@@ -94,7 +90,7 @@ export const login = async(req:userCustom,res:Response)=>{
             return rest
         })
 
-        const token = jwt.sign(payLoad[0],process.env.KEY as string,{expiresIn:'3000s'})
+        const token = jwt.sign(payLoad[0],process.env.KEY as string,{expiresIn:'2000s'})
         res.json({
             message:"logged in",
             token

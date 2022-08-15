@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+    
+
+    <div class="dashboard">
+        <p id="admin">Welcome Admin</p>
+        <button class="btn_dash" onclick="showAddProject()">CREATE</button>
+        <button class="btn_dash" onclick="viewProjects()">VIEW</button>
+        <button class="btn_dash" onclick="assignProject()">ASSIGN</button>
+        
+    </div>
+
+
+    <div id="my_div">
+        <div class="add_project">
+            <!-- <form action=""> -->
+                <p>ADD PROJECT</p>
+                <label for="project_name">project name</label>
+                <input type="text" id="projectname" placeholder="enter project name" required><br>
+                <label for="project_desc">project description</label>
+                <input type="text" id="projectdesc" placeholder="enter project description" required><br>
+                <label for="deadline">project deadline</label>
+                <input type="date" id="projecttimeline" placeholder="enter project deadline" required><br>
+                <button id="add_project" type="submit">Add Project</button>
+           
+       
+            <!-- </form> -->
+        </div>
+
+    </div>
+  
+
+      
+    
+
+    <div id="project_display">
+        <div class="project display">
+
+            <table>
+                <tr>
+                <th>project_id</th>
+                <th>project_name</th>
+                <th>project_desc</th>
+                <th>project_timeline</th>
+                <th>action</th>
+    
+                </tr>
+    
+                <tr>
+                    <td>1</td>
+                    <td>Alfreds Futterkiste</td>
+                    <td>Maria Anders</td>
+                    <td>Germany</td>
+                    <td><button>Delete</button></td>
+                  </tr>
+                
+            </table>
+    
+        </div>
+
+    </div>
+
+
+    <div id="assign_project">
+        <div class="project assign">
+
+            <table>
+                <tr>
+                <th>project_id</th>
+                <th>project_name</th>
+                <th>user_id</th>
+                
+               
+    
+                </tr>
+    
+                <tr>
+                    <td>1</td>
+                    <td>Alfreds Futterkiste</td>
+                    <td>Maria Anders</td>
+                  </tr>
+                
+            </table>
+    
+        </div>
+    </div>
+
+   
+   
+
+
+  
+
+    <script src="admin.js"></script>
+    <script src="../dist/admin.js"></script>
+    
+</body>
+</html>

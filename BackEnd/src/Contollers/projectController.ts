@@ -74,6 +74,21 @@ export const deleteProject = async(req:projectCustom,res:Response)=>{
         
     }
 }
+
+export const getAllProjects = async(req:projectCustom,res:Response)=>{
+    try {
+        
+        const pool = await mssql.connect(sqlConfig);
+        const results = await pool.request().execute("getProjectsTasks");
+        if (results.recordset.length == 0) {
+          return res.status(406).send("No Entries Found");
+        }
+        return res.status(201).send(results.recordset);
+      } catch (error:any) {
+        return res.status(401).send(error.message);
+      }
+  
+}
 export const assignProject = async(req:projectCustom,res:Response)=>{
     try {
         const id = req.body.id;

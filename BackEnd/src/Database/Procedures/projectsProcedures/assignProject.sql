@@ -10,3 +10,5 @@ BEGIN
     WHERE id = @id
 
 END;
+
+EXECUTE assignProject 23, 3;

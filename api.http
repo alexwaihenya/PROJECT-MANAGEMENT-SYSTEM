@@ -9,6 +9,10 @@ Content-Type: application/json
     
 }
 ###
+GET http://localhost:5000/projects/getallprojects
+
+
+###
 DELETE  http://localhost:5000/projects/deleteproject/1
 
 {
@@ -20,8 +24,8 @@ POST http://localhost:5000/projects/assignproject
 Content-Type: application/json
 
 {
-    "id":"3",
-    "user_id":"4"
+    "id":"1",
+    "user_id":"11"
   
 }
 ###
@@ -31,7 +35,7 @@ Content-Type: application/json
 
 {
     "id":"1",
-    "user_id":"2"
+    "user_id":"11"
   
 }
 
@@ -41,8 +45,8 @@ POST http://localhost:5000/users/registeruser
 Content-Type: application/json
 
 {
-    "username":"jonathan",
-    "email":"jonathanndambuki16@gmail.com",
+    "username":"Daniel",
+    "email":"kakinyidk@gmail.com",
     "password":"12345678"  
 }
 
@@ -53,10 +57,13 @@ Content-Type: application/json
 
 {
     
-    "email":"jonathanndambuki16@gmail.com",
+    "email":"lxwaihenya@gmail.com",
     "password":"12345678"  
 }
+###
+GET http://localhost:5000/users/homepage
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBbGV4IiwiZW1haWwiOiJseHdhaWhlbnlhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MDQ2OTkwMCwiZXhwIjoxNjYwNDcxOTAwfQ.J3a3_ZqkFh6MTRMMBfwDfbkeK5NYP1Yeug8HG8Eu2o4
 
 ###
 GET http://localhost:5000/users/check
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJBbGV4IiwiZW1haWwiOiJseHdhaWhlbnlhQGdtYWlsLmNvbSIsImlzX2FkbWluIjpmYWxzZSwiaWF0IjoxNjYwMzA1NDczLCJleHAiOjE2NjAzMDg0NzN9.j3L6UzLstv-0cm2PzXDQo164qzIMnRhsvOnDmteuxz0
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBbGV4IiwiZW1haWwiOiJseHdhaWhlbnlhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MDQ2OTkwMCwiZXhwIjoxNjYwNDcxOTAwfQ.J3a3_ZqkFh6MTRMMBfwDfbkeK5NYP1Yeug8HG8Eu2o4

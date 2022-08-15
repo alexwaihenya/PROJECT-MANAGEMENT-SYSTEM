@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PROJECT MANAGEMENT SYSTEM</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="nav-bar">
+    
+
+            <ul>
+                <li>Projects</li>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact Us</li>
+            </ul>
+
+            <ul>
+                <!-- <li>Login</li>
+                <li>Sign up</li> -->
+                <button class="btn" onclick="showLogin()">Login</button>
+                <button class="btn"onclick="showSignin()">Signin</button>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="register_form" id="register_element">
+        <!-- <form action=""> -->
+            <p>CREATE ACCOUNT</p>
+            <label for="username">username</label>
+            <input type="text" id="register_username"placeholder="enter username" required><br>
+            <label for="email">email</label>
+            <input type="email" id="register_email" placeholder="enter email" required><br>
+            <label for="password">password</label>
+            <input type="password" id="register_password" placeholder="enter password" required><br>
+            <button id="register" type="submit">Register</button>
+   
+        <!-- </form> -->
+    </div>
+
+    <div class="loginform" id="login_element">
+        <!-- <form action=""> -->
+            <p>LOGIN</p>
+            <label for="email">email</label>
+            <input type="email" id="login_email" placeholder="enter email" ><br>
+            <label for="password">password</label>
+            <input type="password" id="login_password" placeholder="enter password"><br>
+           <button id="login" type="submit">Sign In</button>
+
+   
+        <!-- </form> -->
+    </div>
+
+
+
+
+
+
+
+    <div class="section1">
+        <p>Your Leading Project Management Solutions Provider...</p>
+
+    </div>
+    <script src="../dist/app.js"></script>
+</body>
+</html>
