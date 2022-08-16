@@ -15,8 +15,9 @@
     <div class="dashboard">
         <p id="admin">Welcome Admin</p>
         <button class="btn_dash" onclick="showAddProject()">CREATE</button>
-        <button class="btn_dash" onclick="viewProjects()">VIEW</button>
         <button class="btn_dash" onclick="assignProject()">ASSIGN</button>
+        <button class="btn_dash" onclick="viewProjects()">VIEW PROJECTS</button>
+        <button class="btn_dash" onclick="showUsers()">Users</button>
         
     </div>
 
@@ -38,34 +39,31 @@
         </div>
 
     </div>
+
+    <div id="my_div">
+        <div class="add_project">
+            <!-- <form action=""> -->
+                <p>ASSIGN PROJECT</p>
+                <label for="project_id">project id</label>
+                <input type="text" id="projectid" placeholder="enter project id" required><br>
+                <label for="user_id">user id</label>
+                <input type="text" id="user_idp" placeholder="enter user id" required><br>
+                <button id="assign_project1" type="submit">Assign Project</button>
+           
+       
+            <!-- </form> -->
+        </div>
+
+    </div>
   
 
       
     
 
     <div id="project_display">
-        <div class="project display">
+        <div class="projectdisplay">
 
-            <table>
-                <tr>
-                <th>project_id</th>
-                <th>project_name</th>
-                <th>project_desc</th>
-                <th>project_timeline</th>
-                <th>action</th>
-    
-                </tr>
-    
-                <tr>
-                    <td>1</td>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                    <td>Germany</td>
-                    <td><button>Delete</button></td>
-                  </tr>
-                
-            </table>
-    
+  
         </div>
 
     </div>
@@ -74,26 +72,18 @@
     <div id="assign_project">
         <div class="project assign">
 
-            <table>
-                <tr>
-                <th>project_id</th>
-                <th>project_name</th>
-                <th>user_id</th>
-                
-               
-    
-                </tr>
-    
-                <tr>
-                    <td>1</td>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                  </tr>
-                
-            </table>
+        
     
         </div>
     </div>
+
+    <div id="users">
+        <div class="userdisplay">
+
+           
+        </div>
+    </div>
+
 
    
    
@@ -101,7 +91,7 @@
 
   
 
-    <script src="admin.js"></script>
+    <!-- <script src="admin.js"></script> -->
     <script src="../dist/admin.js"></script>
     
 </body>

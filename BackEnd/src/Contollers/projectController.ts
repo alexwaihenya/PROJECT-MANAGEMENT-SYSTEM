@@ -79,7 +79,7 @@ export const getAllProjects = async(req:projectCustom,res:Response)=>{
     try {
         
         const pool = await mssql.connect(sqlConfig);
-        const results = await pool.request().execute("getProjectsTasks");
+        const results = await pool.request().query("select * from Projects");
         if (results.recordset.length == 0) {
           return res.status(406).send("No Entries Found");
         }

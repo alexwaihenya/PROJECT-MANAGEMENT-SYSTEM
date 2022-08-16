@@ -3,13 +3,15 @@ POST http://localhost:5000/projects/createproject
 Content-Type: application/json
 
 {
-    "project_name":"react-2",
+    "project_name":"react-1",
     "project_desc":"design a react app",
     "project_timeline":"12/08/2022"
     
 }
 ###
-GET http://localhost:5000/projects/getallprojects
+POST http://localhost:5000/projects/getallprojects
+Content-Type: application/json
+
 
 
 ###
@@ -24,8 +26,8 @@ POST http://localhost:5000/projects/assignproject
 Content-Type: application/json
 
 {
-    "id":"1",
-    "user_id":"11"
+    "id":"2003",
+    "user_id":"2"
   
 }
 ###
@@ -60,6 +62,9 @@ Content-Type: application/json
     "email":"lxwaihenya@gmail.com",
     "password":"12345678"  
 }
+###
+POST http://localhost:5000/users/getallusers
+Content-Type: application/json
 ###
 GET http://localhost:5000/users/homepage
 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBbGV4IiwiZW1haWwiOiJseHdhaWhlbnlhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MDQ2OTkwMCwiZXhwIjoxNjYwNDcxOTAwfQ.J3a3_ZqkFh6MTRMMBfwDfbkeK5NYP1Yeug8HG8Eu2o4

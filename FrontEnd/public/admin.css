@@ -70,7 +70,7 @@ input{
   margin-bottom: 10px;
   border: 1px solid #999;
 }
-#add_project{
+#add_project,#assign_project1{
   background: linear-gradient(135deg, #1798fb 0%, #2D5CFE 100%);
   height: 46px;
   border-radius: 7px;
@@ -81,6 +81,7 @@ input{
   
 
 }
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;

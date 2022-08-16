@@ -104,6 +104,21 @@ export const login = async(req:userCustom,res:Response)=>{
     }
 }
 
+export const getAllUsers = async(req:userCustom,res:Response)=>{
+    try {
+        
+        const pool = await mssql.connect(sqlConfig);
+        const results = await pool.request().query("select * from Users");
+        if (results.recordset.length == 0) {
+          return res.status(406).send("No Entries Found");
+        }
+        return res.status(201).send(results.recordset);
+      } catch (error:any) {
+        return res.status(401).send(error.message);
+      }
+  
+}
+
 export const getHomepage=async(req:Extended, res:Response)=>{
     if(req.info){
       return res.json({message:`Welcome to the Homepage ${req.info.email}`})

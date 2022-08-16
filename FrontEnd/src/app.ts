@@ -126,6 +126,9 @@ signin.addEventListener('click',()=>{
         
     }else{
         Users.getUser().loginUser(emailInput,passwordInput)
+        setTimeout(() => {
+            window.location.reload()
+          }, 2000);
       
     }
 
@@ -142,6 +145,9 @@ register.addEventListener('click',()=>{
         
     }else{
         Users.getUser().registerUser(nameInput,emailInput,passwordInput)
+        setTimeout(() => {
+            window.location.reload()
+          }, 2000);
 
     }
 })

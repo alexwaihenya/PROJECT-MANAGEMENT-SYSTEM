@@ -5,7 +5,7 @@ const router = Router();
 
 router.post("/createproject",createproject)
 router.delete("/deleteproject/:id",deleteProject)
-router.delete("/getallprojects",getAllProjects)
+router.post("/getallprojects",getAllProjects)
 router.post("/assignproject",assignProject)
 router.post('/completeproject',completeProject)
 
