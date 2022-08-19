@@ -7,12 +7,15 @@ CREATE TABLE Projects(
     project_status VARCHAR(200) DEFAULT 0,
     issent VARCHAR(200) DEFAULT 0,
 
-    -- is_deleted BIT DEFAULT 0 NOT NULL,
     user_id INT,
     CONSTRAINT FK_USER_PROJECTS FOREIGN KEY (user_id)
     REFERENCES Users (id)
     ON UPDATE CASCADE
     ON DELETE SET NULL 
+
+    username VARCHAR,
+    CONSTRAINT FK_USER_PROJECTS FOREIGN KEY (username)
+    REFERENCES Users(username)
 )
 update Projects set project_status=1 where id=1
 

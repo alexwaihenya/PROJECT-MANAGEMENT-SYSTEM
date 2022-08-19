@@ -15,6 +15,20 @@ export interface userCustom extends Request{
    
 }
 
+export interface userDetails extends Request{
+
+    body:{
+        id: number
+        username:string
+        email: string
+        password: string
+        role: string
+
+    }
+
+   
+}
+
 export interface User{
     id: number
     username:string

@@ -3,43 +3,56 @@ POST http://localhost:5000/projects/createproject
 Content-Type: application/json
 
 {
-    "project_name":"react-1",
+    "project_name":"react8-9",
     "project_desc":"design a react app",
-    "project_timeline":"12/08/2022"
+    "project_timeline":"12/08/2022",
+    "email":"kk@gmail.com"
     
 }
 ###
 POST http://localhost:5000/projects/getallprojects
 Content-Type: application/json
+###
 
+# POST http://localhost:5000/users/markdone
+# Content-Type: application/json
 
-
+# {
+#     "id":"3",
+#     "user_id":"2021"
+# }
 ###
 DELETE  http://localhost:5000/projects/deleteproject/1
 
 {
 
 }
+###
+
 
 ###assign project
 POST http://localhost:5000/projects/assignproject
 Content-Type: application/json
 
 {
-    "id":"2003",
-    "user_id":"2"
+    "id":"4",
+    "user_id":"3"
   
 }
 ###
-
+//complete
 POST http://localhost:5000/projects/completeproject
 Content-Type: application/json
 
 {
-    "id":"1",
-    "user_id":"11"
+    "id":"4",
+    "user_id":"3"
   
 }
+//pending
+###
+POST http://localhost:5000/projects/pendingprojects
+Content-Type: application/json
 
 
 ### registeruser
@@ -62,13 +75,31 @@ Content-Type: application/json
     "email":"lxwaihenya@gmail.com",
     "password":"12345678"  
 }
-###
+### get all users
 POST http://localhost:5000/users/getallusers
 Content-Type: application/json
+
 ###
+//get users with no tasks
+POST http://localhost:5000/users/nullusers
+Content-Type: application/json
+###
+
+POST http://localhost:5000/users/assigned
+Content-Type: application/json
+
+###
+POST http://localhost:5000/users/markdone
+Content-Type: application/json
+
+
+
+###
+
 GET http://localhost:5000/users/homepage
 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBbGV4IiwiZW1haWwiOiJseHdhaWhlbnlhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MDQ2OTkwMCwiZXhwIjoxNjYwNDcxOTAwfQ.J3a3_ZqkFh6MTRMMBfwDfbkeK5NYP1Yeug8HG8Eu2o4
 
 ###
 GET http://localhost:5000/users/check
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBbGV4IiwiZW1haWwiOiJseHdhaWhlbnlhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MDQ2OTkwMCwiZXhwIjoxNjYwNDcxOTAwfQ.J3a3_ZqkFh6MTRMMBfwDfbkeK5NYP1Yeug8HG8Eu2o4
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBbGV4IiwiZW1haWwiOiJseHdhaWhlbnlhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MDkwMjAyNywiZXhwIjoxNjYwOTA0MDI3fQ.n2XnLrij8k9arDP8yM6z3Albamk0BKer-U6TDiHItjw
+

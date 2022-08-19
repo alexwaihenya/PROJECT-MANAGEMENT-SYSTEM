@@ -1,98 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="admin.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="admin.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="admin_container">
+      <div class="dashboard">
+        <div class="admin">
+          <p id="admin">Welcome Admin,</p>
+          <button id="logout" class="btn_logout">Logout</button>
+        </div>
 
+        <button class="btn_dash"  id="createBtn">CREATE</button>
+        <button class="btn_dash" id="viewBtn">VIEW PROJECTS</button>
+        <button class="btn_dash" id="completeBtn">COMPLETED PROJECTS</button>
+        <button class="btn_dash" id="userBtn">Users</button>
+      </div>
 
-    
-
-    <div class="dashboard">
-        <p id="admin">Welcome Admin</p>
-        <button class="btn_dash" onclick="showAddProject()">CREATE</button>
-        <button class="btn_dash" onclick="assignProject()">ASSIGN</button>
-        <button class="btn_dash" onclick="viewProjects()">VIEW PROJECTS</button>
-        <button class="btn_dash" onclick="showUsers()">Users</button>
+      <div id="add_project_div">
         
-    </div>
-
-
-    <div id="my_div">
         <div class="add_project">
-            <!-- <form action=""> -->
-                <p>ADD PROJECT</p>
-                <label for="project_name">project name</label>
-                <input type="text" id="projectname" placeholder="enter project name" required><br>
-                <label for="project_desc">project description</label>
-                <input type="text" id="projectdesc" placeholder="enter project description" required><br>
-                <label for="deadline">project deadline</label>
-                <input type="date" id="projecttimeline" placeholder="enter project deadline" required><br>
-                <button id="add_project" type="submit">Add Project</button>
-           
-       
-            <!-- </form> -->
+          
+
+          <!-- <form class="create_new_project"> -->
+
+          <p>ADD PROJECT</p>
+          <p id="error_message"></p>
+          <label for="project_name">project name</label>
+          <input
+            type="text"
+            id="projectname"
+            placeholder="enter project name"
+            required
+          /><br />
+          <label for="project_desc">project description</label>
+          <input
+            type="text"
+            id="projectdesc"
+            placeholder="enter project description"
+            required
+          /><br />
+          <label for="deadline">project deadline</label>
+          <input
+            type="date"
+            id="projecttimeline"
+            placeholder="enter project deadline"
+            required
+          /><br />
+          <label for="useremail">assign project to </label><br />
+
+          <select name="" id="nullemails"></select>
+
+          <button id="add_project" type="submit">Add Project</button>
+
+          <!-- </form> -->
         </div>
+      </div>
 
-    </div>
-
-    <div id="my_div">
-        <div class="add_project">
-            <!-- <form action=""> -->
-                <p>ASSIGN PROJECT</p>
-                <label for="project_id">project id</label>
-                <input type="text" id="projectid" placeholder="enter project id" required><br>
-                <label for="user_id">user id</label>
-                <input type="text" id="user_idp" placeholder="enter user id" required><br>
-                <button id="assign_project1" type="submit">Assign Project</button>
-           
-       
-            <!-- </form> -->
-        </div>
-
-    </div>
-  
-
-      
-    
-
-    <div id="project_display">
+      <div id="project_display">
+        <p>pending projects</p>
         <div class="projectdisplay">
+          <select name="" id="pending_projects">
 
-  
+                </select>
+                <input style="background-color: red;" type="submit" class="deleteProject" value="delete">
         </div>
+      </div>
 
-    </div>
+      <div id="users">
+        <div class="userdisplay"></div>
+      </div>
 
+      <div id="completedProjects">
+        <p>completed projects</p>
+        <div id="completeness" id="">
 
-    <div id="assign_project">
-        <div class="project assign">
-
-        
-    
         </div>
+      </div>
     </div>
-
-    <div id="users">
-        <div class="userdisplay">
-
-           
-        </div>
-    </div>
-
-
-   
-   
-
-
-  
 
     <!-- <script src="admin.js"></script> -->
     <script src="../dist/admin.js"></script>
-    
-</body>
+  </body>
 </html>

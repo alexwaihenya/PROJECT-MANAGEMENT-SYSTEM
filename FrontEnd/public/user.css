@@ -1,56 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
+ *{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ 
 
-  body{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    /* justify-content: center;
-    align-items: center;
-    overflow: hidden; */
-    background: linear-gradient(135deg, #4AB1FF, #2D5CFE);
-  }
 
-  .container{
-    min-width: 605px;
-    padding: 28px 0 30px;
-    /* margin: 137px auto; */
-    background: #fff;
-    border-radius: 7px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  }
 
-  .btn_dash{
-    /* display: flex; */
-    /* flex-direction: column; */
-    background: linear-gradient(135deg, #1798fb 0%, #2D5CFE 100%);
-    height: 24px;
-    border-radius: 7px;
-    border: none;
-    color: white;
-    font-size: 16px;
-    /* width: 100%; */
-    
-    
-  }
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 50%;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
+body{
+  height: 100vh;
+  justify-content: center;
+  /* align-items: center; */
+  overflow: hidden;
+  margin-left: 8px;
+  margin-right: 8px;
+  background: linear-gradient(135deg, #4AB1FF, #2D5CFE);
+}
+
+.container{
+  margin-top: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 28px 0 30px;
+  width: 100%;
+  gap: 24px;
+  align-items: center;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);}
+
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+} 
+.user{
+margin-right: 16px;
+display: flex;
+
+}
+.btn_logout_user{
+background: linear-gradient(135deg, #1798fb 0%, #2D5CFE 100%);
+border-radius: 16px;
+border: none;
+color: white;
+font-size: 16px;
+width: 100%;
+padding: 8px 8px;
+}
+.projects_container{
+  margin-top: 24px;
+  border: 2px solid lightblue;
+  border-radius: 5px;
+  height: 50vh;
+}
+.project{
+  text-align: center;
+}

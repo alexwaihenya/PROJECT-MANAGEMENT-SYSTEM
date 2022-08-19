@@ -1,5 +1,11 @@
+body {
+    background-image: url('../public/images/open_projects.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
 .container{
-    background-color: red;
+    background-color: grey;
     
     
 }
@@ -45,11 +51,16 @@ li{
     padding: 4px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     width: 32vw;
     margin-top: 16px;
-    /* align-items: flex-start; */
+    display: none;
+    
 }
+
+/* .login_container{
+   
+} */
 input{
     width: 94%;
     /* height: 32px; */

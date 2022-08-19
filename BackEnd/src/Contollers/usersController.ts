@@ -2,12 +2,13 @@
 import mssql, { RequestError } from "mssql";
 import { sqlConfig } from "../Config/Config";
 import { Response } from "express";
-import { registerSchema, userLoginSchema } from "../Helpers/userValidator";
+import { registerSchema, updateSchema, userLoginSchema } from "../Helpers/userValidator";
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import { Request } from "express";
-import { Data, userCustom } from "../Interfaces/userCustom";
+import { Data, userCustom, userDetails } from "../Interfaces/userCustom";
 import { User } from "../Interfaces/userCustom";
+import projectCustom, { project } from "../Interfaces/projectCustom";
 
 
 
@@ -119,6 +120,22 @@ export const getAllUsers = async(req:userCustom,res:Response)=>{
   
 }
 
+export const pendingUsers = async(req:userCustom, res:Response)=>{
+    try {
+        const pool= await mssql.connect(sqlConfig)
+
+        const users:userDetails[] = await(
+            await pool.request().execute('IdleUsers')).recordset
+
+        res.status(200).json(
+            users
+        )
+        
+    } catch (error) {
+        error
+    }
+}
+
 export const getHomepage=async(req:Extended, res:Response)=>{
     if(req.info){
       return res.json({message:`Welcome to the Homepage ${req.info.email}`})
@@ -127,6 +144,53 @@ export const getHomepage=async(req:Extended, res:Response)=>{
  
  export const checkUser= async (req:Extended, res:Response)=>{
    if(req.info){
-     res.json({name:req.info.username, role:req.info.role})
+     res.json({name:req.info.username, role:req.info.role, email: req.info.email})
    }
  }
+
+ export const updateComplete = async (req:projectCustom, res:Response)=>{
+    try {
+        const {id}= req.body;
+        // const {error, value }= projectUserSchema2.validate(req.body)
+        // if(error){
+        //     return res.status(400).json({
+        //         message:error.details[0].message
+        //     })
+        // }
+        const pool = await mssql.connect(sqlConfig);
+
+        await pool.request()
+        .input('id', mssql.VarChar, id)
+        .execute('setComplete')
+
+        return res.status(200).json({
+            message: "Task completed"
+        })
+    } catch (error) {
+        if(error instanceof RequestError){
+            res.status(404).json({
+                message:"No Pending project with that ProjectId"
+            })
+        }
+        else{
+            res.status(500).json({
+                message:"Internal Server Error"})
+        }
+    }
+}
+
+export const checkAssigned = async(req:userCustom, res:Response)=>{
+    try {
+        const pool= await mssql.connect(sqlConfig)
+
+        const assignedproject: project[]= await(
+            await pool.request()
+            .execute('checkAssigned')).recordset
+
+        res.status(200).json({
+            assignedproject
+        })
+    } catch (error) {
+        error
+    }
+}

@@ -6,23 +6,32 @@ const register =document.getElementById('register') as HTMLButtonElement
 const email= document.getElementById('login_email') as HTMLInputElement
 const password= document.getElementById('login_password') as HTMLInputElement
 const signin =document.getElementById('login') as HTMLButtonElement
-
+const login_display = document.getElementById("login_element");
+const register_display = document.getElementById("register_element");
 
 function showLogin() {
-    const x = document.getElementById("login_element");
-      if (x!.style.display === "none") {
-        x!.style.display = "block";
+    
+      if (login_display!.style.display === "none") {
+        login_display!.style.display = "block";
+        register_display!.style.display = "none";
+
       } else {
-        x!.style.display = "none";
+        login_display!.style.display = "none";
+        register_display!.style.display = "none";
+
       }
  }
 
  function showSignin() {
-    const x = document.getElementById("register_element");
-      if (x!.style.display === "none") {
-        x!.style.display = "block";
+    
+      if (register_display!.style.display === "none") {
+        register_display!.style.display = "block";
+        login_display!.style.display = "none";
+
       } else {
-        x!.style.display = "none";
+        register_display!.style.display = "none";
+        login_display!.style.display = "none";
+
       }
  }
 
@@ -93,7 +102,7 @@ class Users{
 
     redirect(){
         const token = localStorage.getItem('token') as string
-        new Promise<{name:string, role:string}>((resolve,reject)=>{
+        new Promise<{name:string, role:string, email:string}>((resolve,reject)=>{
             fetch('http://localhost:5000/users/check',{
                  headers:{
                 'Accept': 'application/json',
@@ -106,9 +115,11 @@ class Users{
         }).then(data=>{
             console.log(data);
             localStorage.setItem('name',data.name)
+            localStorage.setItem('email',data.email)
+            
             if(data.role==='admin'){
                 location.href='adminDashboard.html'
-            }else{
+            }else if(data.role==='user'){
                    location.href='userdashboard.html'
             }
         }
@@ -122,30 +133,54 @@ signin.addEventListener('click',()=>{
     const passwordInput = password.value;
 
     if(emailInput == '' || passwordInput==''){
+        const emptyFields = document.getElementById("emptyloginfield") as HTMLParagraphElement
+        emptyFields.textContent = "Please fill in all fields";
+        emptyFields.style.color = "red";
+        setTimeout(()=>{
+            emptyFields.textContent = ""
+      
+          },2000)
         console.log('Please fill in all fields...');
         
     }else{
         Users.getUser().loginUser(emailInput,passwordInput)
-        setTimeout(() => {
-            window.location.reload()
-          }, 2000);
+
+
+
+        // setTimeout(() => {
+        //     window.location.reload()
+        //   }, 2000);
       
     }
 
 })
 
-
+// const emptyfields = document.getElementById('#emptyfield') as HTMLParagraphElement
 register.addEventListener('click',()=>{
     const nameInput = register_username.value;
     const emailInput = register_email.value;
     const passwordInput = register_password.value;
+    
 
     if(nameInput=='' || emailInput==''|| passwordInput==''){
-        console.log('Please fill in all fields...');
+        const emptyFields = document.getElementById("emptyfield") as HTMLParagraphElement
+        emptyFields.textContent = "Please fill in all fields";
+        emptyFields.style.color = "red";
+        setTimeout(()=>{
+            emptyFields.textContent = ""
+      
+          },2000)
+      
+        
         
     }else{
         Users.getUser().registerUser(nameInput,emailInput,passwordInput)
+        const success = document.getElementById("emptyfield") as HTMLParagraphElement
+        success.textContent = "registered successfully";
+        success.style.color = "red";
+
         setTimeout(() => {
+            // window.location.href='userDashboard.html'
             window.location.reload()
           }, 2000);
 

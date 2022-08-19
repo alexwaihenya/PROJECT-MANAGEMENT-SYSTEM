@@ -24,7 +24,7 @@
                 <!-- <li>Login</li>
                 <li>Sign up</li> -->
                 <button class="btn" onclick="showLogin()">Login</button>
-                <button class="btn"onclick="showSignin()">Signin</button>
+                <button class="btn"onclick="showSignin()">Signup</button>
             </ul>
 
         </div>
@@ -34,6 +34,7 @@
     <div class="register_form" id="register_element">
         <!-- <form action=""> -->
             <p>CREATE ACCOUNT</p>
+            <p id="emptyfield"></p>
             <label for="username">username</label>
             <input type="text" id="register_username"placeholder="enter username" required><br>
             <label for="email">email</label>
@@ -45,29 +46,28 @@
         <!-- </form> -->
     </div>
 
-    <div class="loginform" id="login_element">
-        <!-- <form action=""> -->
-            <p>LOGIN</p>
-            <label for="email">email</label>
-            <input type="email" id="login_email" placeholder="enter email" ><br>
-            <label for="password">password</label>
-            <input type="password" id="login_password" placeholder="enter password"><br>
-           <button id="login" type="submit">Sign In</button>
 
-   
-        <!-- </form> -->
-    </div>
+    <div class="login_container">
 
+        <div class="loginform" id="login_element">
+            <!-- <form action=""> -->
+                
+                <p>LOGIN</p>
+                <p id="emptyloginfield"></p>
 
-
-
-
-
-
-    <div class="section1">
-        <p>Your Leading Project Management Solutions Provider...</p>
+                <label for="email">email</label>
+                <input type="email" id="login_email" placeholder="enter email" ><br>
+                <label for="password">password</label>
+                <input type="password" id="login_password" placeholder="enter password"><br>
+               <button id="login" type="submit">Sign In</button>
+    
+       
+            <!-- </form> -->
+        </div>
 
     </div>
+
+    
     <script src="../dist/app.js"></script>
 </body>
 </html>

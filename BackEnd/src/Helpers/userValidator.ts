@@ -13,3 +13,8 @@ export const userLoginSchema =Joi.object({
     
 
 })
+export const updateSchema =Joi.object({
+    id: Joi.string().required
+    
+
+})

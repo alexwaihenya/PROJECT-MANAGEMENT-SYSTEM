@@ -4,26 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user</title>
     <link rel="stylesheet" href="user.css">
-    <title>Document</title>
 </head>
 <body>
-    <p id="user">Welcome user</p>
 
-    <button class="btn_dash">Logout</button>
-
-    <div id="project_display">
-        <div class="projectdisplay">
-
-  
+    <div class="container">
+        <div class="user">
+            <p id="username"></p>
+       
+            <input type="submit" value="logout"  class="btn_logout_user">
         </div>
+        <!-- <button onclick="submit()">click</button> -->
 
     </div>
 
-    
+    <!-- <div class="projects_container">
+        <div class="project">
+            <h4 id="available_projects">Available projects</h4>
+
+            <div class="projects_assigned">
+
+            </div>
 
 
 
-    <script src="../dist/user.js"></script>
+        </div>
+        
+    </div> -->
+    <div class="projects_container">
+        <p style="text-align: center;">Available projects</p>
+        <div class="projects_assigned">
+            
+        </div>
+        <div class="complete_task">
+            <form action="" method="post">
+                <select name="" id="projects_allocated"> 
+                    <option id="mark_complete" value="">
+                            
+                    </option>
+                </select>
+                <input type="submit" value="Done" id="mark_complete_project" >
+            </form>
+        </div>
+    </div>
+
+
+    <script src="../dist/user.js"></script> 
 </body>
 </html>
